@@ -1,6 +1,6 @@
 {
-"ver" : "1",
-"txt" : "This Is the Old Version Of This Application Join Our Channel To Update This Application.",
+"ver" : "2",
+"txt" : "This Is the Old Version.",
 "espurl" : "https://github.com/Comrade-OP/comradeOp/blob/main/sick?raw=true",
 "injurl" : "https://github.com/Comrade-OP/comradeOp/blob/main/corrupt?raw=true",
 "url" : "https://t.me/YashGuruOP",
