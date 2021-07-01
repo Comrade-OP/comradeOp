@@ -1,5 +1,5 @@
 {
-"ver" : "2",
+"ver" : "1",
 "txt" : "This Is the Old Version Of This Application Join Our Channel To Update This Application.",
 "espurl" : "https://github.com/Comrade-OP/comradeOp/blob/main/sick?raw=true",
 "injurl" : "https://github.com/Comrade-OP/comradeOp/blob/main/corrupt?raw=true",
