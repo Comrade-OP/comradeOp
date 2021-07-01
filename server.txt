@@ -1,3 +1,4 @@
 {
-"ver" : "1"
+"ver" : "1",
+"txt" : "This Is the Old Version Of This Application Join Our Channel To Update This Application."
 }
