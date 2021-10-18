@@ -1,7 +1,7 @@
-Date = "20310101" --Change Date  
+Date = "20211030" --Change Date  
 date = os.date("%Y%m%d") 
 if date >= Date then 
-  gg.alert(" Server Offline ") 
+  gg.alert(" Server Offline\nContact @AVIHACKERYT") 
   return 
 end
 
@@ -16,12 +16,20 @@ gg.alert("USE ONLY AVI YT GG")
 os.exit() 
 end
 
-if gg.getTargetPackage() == "bin.mt.plus.canary" or gg.getTargetPackage() == "com.rekoo.pubgm" or gg.getTargetPackage() == "com.pubg.imobile" or gg.getTargetPackage() == "com.pubg.krmobile" or gg.getTargetPackage() == "com.vng.pubgmobile" then -- Check Game Package And Selected Game . 
+if gg.getTargetPackage() == "com.tencent.ig" or gg.getTargetPackage() == "com.rekoo.pubgm" or gg.getTargetPackage() == "com.pubg.imobile" or gg.getTargetPackage() == "com.pubg.krmobile" or gg.getTargetPackage() == "bin.mt.plus.canary" then -- Check Game Package And Selected Game . 
   gg.clearResults() 
   else 
 print("YOU PUBGM IS NOT RUNNING\nOPEN YOUR PUBGM THAN EXECUTE THIS\nSCRIPT CODING BY AVI HACKER YT\nTHANK YOU ") 
   return os.exit() 
 end
+
+--Checking Pubg 32 Bit Or 64 Bit--
+--check = io.open("/storage/emulated/0/Android/obb/com.pubg.imobile/main.15522.com.pubg.imobile.obb")
+--if check == nil then
+--gg.alert("Please Uninstall Pubg 64 Bit From Your Phone And Install Pubg 32 Bit Version.")
+--gg.processKill()
+--os.exit()
+--end
 
 
 function edit(orig,ret)_om=orig[1].memory or orig[1][1]_ov=orig[3].value or orig[3][1]_on=orig[2].name or orig[2][1]gg.clearResults()gg.setRanges(_om)gg.searchNumber(_ov,orig[3].type or orig[3][2])sz=gg.getResultCount()if sz<1 then gg.toast(_on.."\nFailed to Open")else sl=gg.getResults(99999)for i=1,sz do ist=true for v=4,#orig do if ist==true and sl[i].value==_ov then cd={{}}cd[1].address=sl[i].address+(orig[v].offset or orig[v][2])cd[1].flags=orig[v].type or orig[v][3]szpy=gg.getValues(cd)cdlv=orig[v].lv or orig[v][1]cdv=szpy[1].value if cdlv==cdv then pdjg=true ist=true else pdjg=false ist=false end end end if pdjg==true then szpy=sl[i].address for x=1,#(ret)do xgpy=szpy+(ret[x].offset or ret[x][2])xglx=ret[x].type or ret[x][3]xgsz=ret[x].value or ret[x][1]xgdj=ret[x].freeze or ret[x][4]xgsj={{address=xgpy,flags=xglx,value=xgsz}}if xgdj==true then xgsj[1].freeze=xgdj gg.addListItems(xgsj)else gg.setValues(xgsj)end end xgjg=true end end if xgjg==true then gg.toast(_on.."\nSuccessfully Opened")else gg.toast(_on.."\nSuccessfully Opened")end end end--
@@ -67,8 +75,8 @@ Avinash90 = gg.multiChoice({
 " Croshair | Lobby 1x",
 " Black Sky | Game",
 " Hit X Effect | Game",
-" Fast Shoot | Game",
-" Aimbot 300°m | Game",
+" Wall Shot | Game",
+" Aimbot 100 m | Game",
 " All Car Fly | game",
 " Fast Landing | Plane",
 " Sit Scope | Game",
@@ -309,7 +317,7 @@ gg.setRanges(32) local  dataType  =  16 local  search  =  {{35.0,  0},{33.0,  4}
   gg.searchNumber("9.201618;30.5;25", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
   gg.searchNumber("25;30.5", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
   gg.getResults(10)
-  gg.editAll("280", gg.TYPE_FLOAT)
+  gg.editAll("560", gg.TYPE_FLOAT)
   gg.clearResults()
   gg.setRanges(gg.REGION_C_DATA | gg.REGION_CODE_APP)
   gg.searchNumber("-298284466;-1.304566e23F", gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1)
@@ -382,19 +390,9 @@ gg.toast("AVI HACKER YT ")
 end
 
 function night()
-  gg.clearResults()
-gg.setRanges(gg.REGION_CODE_APP)
-gg.searchNumber("-1,883,348,481,058,764,210", gg.TYPE_QWORD, false, gg.SIGN_EQUAL, 0, -1)
-gg.searchNumber("-1,883,348,481,058,764,210", gg.TYPE_QWORD, false, gg.SIGN_EQUAL, 0, -1)
-gg.getResults(100)
-gg.editAll("-1,883,348,485,055,444,540", gg.TYPE_QWORD)
-gg.clearResults()
-gg.setRanges(gg.REGION_C_DATA | gg.REGION_CODE_APP)
-gg.searchNumber("-298284466;-1.304566e23F", gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1)
-gg.searchNumber("-298284466", gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1)
-gg.getResults(99)
-gg.editAll("0", gg.TYPE_DWORD)
-gg.clearResults()
+so=gg.getRangesList('libUE4.so')[1].start
+py=0x4967594
+setvalue(so+py,4,0)
 gg.toast("AVI HACKER YT ")
 end
 
@@ -407,39 +405,17 @@ gg.toast("AVI HACKER YT ")
 end
 
 function track()
-gg.setRanges(gg.REGION_CODE_APP)--aimbot
-  gg.searchNumber("360;0.0001;1478828288", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
-  gg.searchNumber("0.0001", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
-  gg.getResults(100)
-  gg.editAll("99999999", gg.TYPE_FLOAT)
-  gg.clearResults()
   so=gg.getRangesList('libUE4.so')[1].start
 py=0x28E4620
-setvalue(so+py,16,0) 
-so=gg.getRangesList('libUE4.so')[1].start
-py=0x1123E48
-setvalue(so+py,16,1.66153519e35)
-so=gg.getRangesList('libUE4.so')[1].start
-py=0x1123ECC
-setvalue(so+py,16,-3.86856308e25)
-so=gg.getRangesList('libUE4.so')[1].start
-py=0x1123ED0
-setvalue(so+py,16,-3.86856308e25)
+setvalue(so+py,16,220) 
 gg.toast("AVI HACKER YT")
 end
 
 function lulli()
-gg.clearResults()
-gg.setRanges(gg.REGION_ANONYMOUS)
-gg.searchNumber("-980", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
-revert = gg.getResults(61, nil, nil, nil, nil, nil, nil, nil, nil)
-gg.editAll("20000", gg.TYPE_FLOAT)
-gg.processResume()
-gg.sleep(500)
-if revert ~= nil then
-  gg.setValues(revert)
-end
-gg.clearResults()
+setvalue(so+py,16,-3.86856308e25)
+so=gg.getRangesList('libUE4.so')[1].start
+py=0x1123ED0
+setvalue(so+py,16,-3.86856308e25)
 gg.toast("AVI HACKER YT")
 end
 
@@ -572,21 +548,15 @@ function knock()
 gg.setRanges(gg.REGION_CODE_APP)
 gg.searchNumber("-9.0072154e15;-2.7395928e28;-2.7860149e28", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
 gg.refineNumber("-2.7395928e28", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
-gg.getResults(1500)
+ALI1=gg.getResults(1500)
 gg.editAll("-2.73959299e28", gg.TYPE_FLOAT)
 gg.clearResults()
-gg.toast("?????????? ?????????? + ??????????  ????")
+gg.toast("Speed Knock + Prone 0N")
 gg.toast("AVI HACKER YT")
 end
 
 function prone()
-gg.setRanges(gg.REGION_CODE_APP)
-gg.searchNumber("-9.0072154e15;-2.73959299e28;-2.7860149e28", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
-gg.refineNumber("-2.73959299e28", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
-gg.getResults(1500)
-gg.editAll("-2.7395928e28", gg.TYPE_FLOAT)
-gg.clearResults()
-gg.toast("?????????? ?????????? + ??????????  ??????")
+gg.setValues(ALI1)
 gg.toast("AVI HACKER YT")
 end
 
@@ -602,25 +572,72 @@ lodu2 = gg.alert("No Lag Flash", " [✓]Activate", " [𝕏]Deactivate")
 
 function Flash()
 gg.clearResults()
-gg.setRanges(32)
-gg.searchNumber("1.0;1.0;1.0;0.0001;20.0;0.00050000002;0.40000000596:25", 16, false, 536870912, 0, -1)
-gg.refineNumber("0.0005", 16, false, 536870912, 0, -1)
-FXA = gg.getResults(54)
-gg.editAll("0.10000000149", 16)------micro ANONYMOUS  dulu refine value nya 1 Edit all 1.08
+gg.setRanges(gg.REGION_ANONYMOUS)
+gg.searchNumber("88;60;50;2::", 16, false, gg.SIGN_EQUAL, 0, -1)
+gg.searchNumber("60", 16, false, gg.SIGN_EQUAL, 0, -1)
+FXA = gg.getResults(100)
+gg.editAll("-60", 16)
 gg.clearResults()
 gg.setRanges(16384)
-gg.setVisible(false)
-gg.searchNumber("-1585267064848315881", 32, false, 536870912, 0, -1)
-FXB = gg.getResults(100)
-gg.editAll("-1585267068834414550", 32)------SLOWMO 
+gg.searchNumber("-1,287,719,427,143,988,736", gg.TYPE_QWORD, false, gg.SIGN_EQUAL, 0, -1)
+FXB = gg.getResults(1110)
+gg.editAll("-1,296,744,153,870,237,696", 32)
 gg.clearResults()
-gg.searchNumber("-1,292,522,026,557,240,760", 32, false, 536870912, 0, -1)
-FXC = gg.getResults(100)
-gg.editAll("-1,292,522,029,219,577,856", 32)----FLASH
+gg.setRanges(16384)
+gg.searchNumber("-1,296,744,149,883,614,555",gg.TYPE_QWORD,false,gg.SIGN_EQUAL,0, -1)
+FXC = gg.getResults(190)
+gg.editAll("-1,296,744,153,870,237,696",gg.TYPE_QWORD)
 gg.clearResults()
-gg.searchNumber("-1505254313802431360", 32, false, 536870912, 0, -1)
-FXD = gg.getResults(1000)
-gg.editAll("-1,505,254,313,804,899,999", 32) -----MICRO 10.90734863281
+gg.setRanges(16384)
+gg.searchNumber("-6.15264497e27", 16,false,gg.SIGN_EQUAL,0, -1)
+FXD =gg.getResults(50)
+gg.editAll("0",16)
+gg.clearResults() 
+gg.setRanges(16384) 
+gg.searchNumber("-6.15262313e27", 16, false, gg.SIGN_EQUAL, 0, -1) 
+FXE =gg.getResults(50) 
+gg.editAll("0", 16) 
+gg.clearResults() 
+gg.alert("SHIT DOWN BRO ANTI-FULLBACK")
+gg.setRanges(gg.REGION_CODE_APP)
+gg.searchNumber("-1.0530367e28;-5.8454586e27;-2.7860151e28;-3.7444097e28;-2.793752e28::", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
+gg.searchNumber("-2.7860151e28;-3.7444097e28;-2.793752e28::", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
+N1=gg.getResults(3)
+gg.editAll("0", gg.TYPE_FLOAT)
+gg.clearResults()
+gg.setRanges(gg.REGION_CODE_APP)
+gg.searchNumber("-6.1526231e27;-1.0070975e28;::", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
+gg.searchNumber("-6.1526231e27", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
+N2 = gg.getResults(1401)
+gg.editAll("0", gg.TYPE_FLOAT)
+gg.clearResults()
+gg.setRanges(gg.REGION_CODE_APP)
+gg.searchNumber("1,873,498,234,778,812,417", gg.TYPE_QWORD, false, gg.SIGN_EQUAL, 0, -1)
+gg.refineNumber("1,873,498,234,778,812,417", gg.TYPE_QWORD, false, gg.SIGN_EQUAL, 0, -1)
+gg.refineNumber("1,873,498,234,778,812,417", gg.TYPE_QWORD, false, gg.SIGN_EQUAL, 0, -1)
+L1=gg.getResults(1401)
+gg.editAll("1,873,498,234,778,812,416", gg.TYPE_QWORD)
+gg.clearResults()
+gg.setRanges(gg.REGION_CODE_APP)
+gg.searchNumber("403,635,275,035,574,273", gg.TYPE_QWORD, false, gg.SIGN_EQUAL, 0, -1)
+gg.refineNumber("403,635,275,035,574,273", gg.TYPE_QWORD, false, gg.SIGN_EQUAL, 0, -1)
+gg.refineNumber("403,635,275,035,574,273", gg.TYPE_QWORD, false, gg.SIGN_EQUAL, 0, -1)
+L2=gg.getResults(1401)
+gg.editAll("403,635,275,035,574,272", gg.TYPE_QWORD)
+gg.clearResults()
+gg.setRanges(gg.REGION_CODE_APP)
+gg.searchNumber("-2,044,616,634,647,180,784", gg.TYPE_QWORD, false, gg.SIGN_EQUAL, 0, -1)
+gg.refineNumber("-2,044,616,634,647,180,784", gg.TYPE_QWORD, false, gg.SIGN_EQUAL, 0, -1)
+gg.refineNumber("-2,044,616,634,647,180,784", gg.TYPE_QWORD, false, gg.SIGN_EQUAL, 0, -1)
+R1=gg.getResults(1401)
+gg.editAll("-2,044,616,634,647,180,783", gg.TYPE_QWORD)
+gg.clearResults()
+gg.setRanges(gg.REGION_CODE_APP)
+gg.searchNumber("-1296744149883614555", gg.TYPE_QWORD, false, gg.SIGN_EQUAL, 0, -1)
+gg.refineNumber("-1296744149883614555", gg.TYPE_QWORD, false, gg.SIGN_EQUAL, 0, -1)
+gg.refineNumber("-1296744149883614555", gg.TYPE_QWORD, false, gg.SIGN_EQUAL, 0, -1)
+R2=gg.getResults(1401)
+gg.editAll("-1296744153870237554", gg.TYPE_QWORD)
 gg.clearResults()
 gg.alert("FLASH 0N")
 gg.toast("AVI HACKER YT")
@@ -631,6 +648,13 @@ gg.setValues(FXA)
 gg.setValues(FXB)
 gg.setValues(FXC)
 gg.setValues(FXD)
+gg.setValues(FXE)
+gg.setValues(N1)
+gg.setValues(N2)
+gg.setValues(L1)
+gg.setValues(L2)
+gg.setValues(R1)
+gg.setValues(R2)
 gg.alert("FLASH 0FF")
 gg.toast("AVI HACKER YT")
 end
@@ -679,33 +703,6 @@ so=gg.getRangesList('libUE4.so')[1].start
 py=0x67E3764
 setvalue(so+py,16,4.2245085e-39)
 gg.clearResults()
-gg.setRanges(gg.REGION_CODE_APP)
-gg.clearResults()
-gg.searchNumber("1,937,339,183;795,698,548;795,765,090;1,802,398,060;788,558,437:17", gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1, 0)
-revert = gg.getResults(100, nil, nil, nil, nil, nil, nil, nil, nil)
-local t = gg.getResults(100, nil, nil, nil, nil, nil, nil, nil, nil)
-for i, v in ipairs(t) do
-	if v.flags == gg.TYPE_DWORD then
-		v.value = "0"
-		v.freeze = true
-	end
-end
-gg.addListItems(t)
-t = nil
-gg.clearResults()
-gg.setRanges(gg.REGION_CODE_SYS)
-gg.searchNumber("1,937,339,183;795,698,548;795,765,090;1,802,398,060;788,558,437:17", gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1, 0)
-revert = gg.getResults(100, nil, nil, nil, nil, nil, nil, nil, nil)
-local t = gg.getResults(100, nil, nil, nil, nil, nil, nil, nil, nil)
-for i, v in ipairs(t) do
-	if v.flags == gg.TYPE_DWORD then
-		v.value = "0"
-		v.freeze = true
-	end
-end
-gg.addListItems(t)
-t = nil
-gg.clearResults()
 gg.alert("Logo Bypass Activated\nApply Safe Hacks")
 gg.toast(" ██████████████ 100%")
 gg.toast("AVI HACKER YT ")
@@ -727,71 +724,237 @@ os.remove("/data/data/com.tencent.ig/files/*")
 os.remove("/data/data/com.tencent.ig/app_crashrecord")
 os.remove("/data/data/com.tencent.ig/files/*")
 os.remove("/data/data/com.tencent.ig/app_crashrecord")
-gg.setVisible(false)
+gg.setVisible(true)
 gg.clearResults()
 gg.setRanges(gg.REGION_C_ALLOC)
-gg.searchNumber("620,137,442,967,552", gg.TYPE_QWORD)
-gg.refineNumber("620,137,442,967,552", gg.TYPE_QWORD)
-gg.getResults(500)
+gg.setVisible(false)--Dec By MMP
+gg.searchNumber("620137442967552")
+gg.refineNumber("620137442967552")
+gg.getResults(510)
 gg.editAll("288233678981562368", gg.TYPE_QWORD)
 gg.clearResults()
 gg.setRanges(gg.REGION_C_ALLOC)
-gg.searchNumber("578351706144768;564058054983680", gg.TYPE_QWORD)
-gg.refineNumber("578351706144768", gg.TYPE_QWORD)
+gg.setVisible(false)--Dec By MMP
+gg.searchNumber("620137442967552")
+gg.refineNumber("620137442967552")
+gg.getResults(5010)
+gg.editAll("288233678981562368", gg.TYPE_QWORD)
+gg.clearResults()
+gg.setRanges(gg.REGION_C_ALLOC)
+gg.setVisible(false)--Dec By MMP
+gg.searchNumber("578351706144768;564058054983680")
+gg.refineNumber("578351706144768")
+gg.getResults(50010)
+gg.editAll("288233678981562368", gg.TYPE_QWORD)
+gg.clearResults()
+gg.setVisible(false)--Dec By MMP
+gg.searchNumber("577252194516992;288233678981562368")
+gg.refineNumber("577252194516992")
+gg.getResults(50010)
+gg.editAll("288233678981562368", gg.TYPE_QWORD)
+gg.clearResults()
+gg.setRanges(gg.REGION_C_ALLOC)
+gg.setVisible(false)--Dec By MMP
+gg.searchNumber("3298534883328~288233678981562368;288233678981562368")
+gg.refineNumber("3298534883328~288233678981562368")
+gg.getResults(5678)
+gg.editAll("0", gg.TYPE_DWORD)
+gg.clearResults()
+gg.setRanges(gg.REGION_C_ALLOC)
+gg.setVisible(false)--Dec By MMP
+gg.searchNumber("280~590336;67109633")
+gg.refineNumber("280~590336")
+gg.getResultsCount()
+gg.clearResults()
+gg.setRanges(gg.REGION_C_ALLOC)
+gg.setVisible(false)--Dec By MMP
+gg.searchNumber("134914;144387", gg.TYPE_DWORD)
+gg.refineNumber("134914", gg.TYPE_DWORD)
+gg.getResults(62877)
+gg.editAll("133890", gg.TYPE_DWORD)
+gg.clearResults()
+gg.setRanges(gg.REGION_C_ALLOC)
+gg.setVisible(false)--Dec By MMP
+gg.searchNumber("133634;133890", gg.TYPE_DWORD)
+gg.refineNumber("133634", gg.TYPE_DWORD)
+gg.getResults(62877)
+gg.editAll("133890", gg.TYPE_DWORD)
+gg.clearResults()
+gg.setRanges(gg.REGION_C_ALLOC)
+gg.setVisible(false)--Dec By MMP
+gg.searchNumber("133634;134658", gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1)
+gg.refineNumber("133634", gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1, 0)
+gg.getResults(62877)
+gg.editAll("133890", gg.TYPE_DWORD)
+gg.clearResults()
+gg.setRanges(gg.REGION_C_ALLOC)
+gg.setVisible(false)--Dec By MMP
+gg.searchNumber("909391408", gg.TYPE_DWORD)
+gg.getResults(62877)
+gg.editAll("1089886885", gg.TYPE_DWORD)
+gg.clearResults()
+gg.setRanges(gg.REGION_C_ALLOC)
+gg.setVisible(false)--Dec By MMP
+gg.searchNumber("909391408", gg.TYPE_DWORD)
+gg.getResults(999)
+gg.editAll("1089886885", gg.TYPE_DWORD)
+gg.clearResults()
+gg.setRanges(gg.REGION_C_ALLOC)
+gg.setVisible(false)--Dec By MMP
+gg.searchNumber("67633927;67109377", gg.TYPE_DWORD)
+gg.refineNumber("67633927;67109377", gg.TYPE_DWORD)
 gg.getResults(50000)
-gg.editAll("361418272522109953", gg.TYPE_QWORD)
-gg.clearResults()
-gg.searchNumber("577252194516992;288233678981562368", gg.TYPE_QWORD)
-gg.refineNumber("577252194516992", gg.TYPE_QWORD)
-gg.getResults(99999)
-gg.editAll("361418272522109953", gg.TYPE_QWORD)
+gg.editAll("67633927", gg.TYPE_DWORD)
 gg.clearResults()
 gg.setRanges(gg.REGION_C_ALLOC)
-gg.searchNumber("65795~590336;67109633;131330", gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1)
-gg.refineNumber("65795~590336", gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1)
-gg.getResults(56789)
-gg.editAll("361418272522109953", gg.TYPE_QWORD)
-gg.clearResults()
-gg.setRanges(4)
-gg.searchNumber("1.5047707e-36", 16)
+gg.setVisible(false)--Dec By MMP
+gg.searchNumber("67109390;67114093", gg.TYPE_DWORD)
+gg.refineNumber("67109390;67114093", gg.TYPE_DWORD)
 gg.getResults(50000)
-gg.editAll("3.60133705e-43", 16)
-gg.clearResults()
+gg.editAll("67633927", gg.TYPE_DWORD)
 gg.clearResults()
 gg.setRanges(gg.REGION_C_ALLOC)
-gg.searchNumber("4096;135682", gg.TYPE_DWORD)
-gg.refineNumber("4096", gg.TYPE_DWORD)
+gg.setVisible(false)--Dec By MMP
+gg.searchNumber("196,864;16,842,753::5", gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1)
+gg.refineNumber("196,864", gg.TYPE_DWORD)
 gg.getResults(50000)
-gg.editAll("8064", gg.TYPE_DWORD)
+gg.editAll("84,149,249", gg.TYPE_DWORD)
 gg.clearResults()
 gg.setRanges(gg.REGION_C_ALLOC)
-gg.searchNumber("134658", gg.TYPE_DWORD)
-gg.refineNumber("134658", gg.TYPE_DWORD)
+gg.setVisible(false)--Dec By MMP
+gg.searchNumber("67,109,377;16,384", gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1)
+gg.refineNumber("16384", gg.TYPE_DWORD)
 gg.getResults(50000)
-gg.editAll("769", gg.TYPE_DWORD)
+gg.editAll("84,149,249", gg.TYPE_DWORD)
 gg.clearResults()
 gg.setRanges(gg.REGION_C_ALLOC)
-gg.searchNumber("144387", gg.TYPE_DWORD)
-gg.refineNumber("144387", gg.TYPE_DWORD)
+gg.setVisible(false)--Dec By MMP
+gg.searchNumber("131,330;134,658", gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1)
+gg.refineNumber("134,658", gg.TYPE_DWORD)
 gg.getResults(50000)
-gg.editAll("67109633", gg.TYPE_DWORD)
+gg.editAll("84,149,249", gg.TYPE_DWORD)
 gg.clearResults()
 gg.setRanges(gg.REGION_C_ALLOC)
-gg.searchNumber("132098", gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1, 0)
-gg.refineNumber("132098", gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1, 0)
-gg.getResults(99999)
-gg.editAll("197634", gg.TYPE_DWORD)
-gg.setRanges(gg.REGION_C_ALLOC)
-gg.searchNumber("134914", gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1, 0)
-gg.refineNumber("134914", gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1, 0)
-gg.getResults(99999)
-gg.editAll("197634", gg.TYPE_DWORD)
+gg.setVisible(false)--Dec By MMP
+gg.searchNumber("135,682;144,387", gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1)
+gg.refineNumber("135,682", gg.TYPE_DWORD)
+gg.getResults(50000)
+gg.editAll("84,149,249", gg.TYPE_DWORD)
 gg.clearResults()
 gg.setRanges(gg.REGION_C_ALLOC)
-gg.searchNumber("133378", gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1, 0)
-gg.refineNumber("133378", gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1, 0)
-gg.getResults(99999)
-gg.editAll("197634", gg.TYPE_DWORD)
+gg.setVisible(false)--Dec By MMP
+gg.searchNumber("4,096;135,682", gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1)
+gg.refineNumber("4,096", gg.TYPE_DWORD)
+gg.getResults(50000)
+gg.editAll("84,149,249", gg.TYPE_DWORD)
+gg.clearResults()
+gg.setRanges(gg.REGION_C_ALLOC)
+gg.setVisible(false)--Dec By MMP
+gg.searchNumber("134,402;67,109,377", gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1)
+gg.refineNumber("134,402", gg.TYPE_DWORD)
+gg.getResults(50000)
+gg.editAll("84,149,249", gg.TYPE_DWORD)
+gg.clearResults()
+gg.setRanges(gg.REGION_C_ALLOC)
+gg.setVisible(false)--Dec By MMP
+gg.searchNumber("134,658;134,658", gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1)
+gg.refineNumber("134,658", gg.TYPE_DWORD)
+gg.getResults(50000)
+gg.editAll("84,149,249", gg.TYPE_DWORD)
+gg.clearResults()
+gg.setRanges(gg.REGION_C_ALLOC)
+gg.setVisible(false)--Dec By MMP
+gg.searchNumber("131,842;133,635", gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1)
+gg.refineNumber("131,842", gg.TYPE_DWORD)
+gg.getResults(50000)
+gg.editAll("84,149,249", gg.TYPE_DWORD)
+gg.clearResults()
+gg.setRanges(gg.REGION_C_ALLOC)
+gg.setVisible(false)--Dec By MMP
+gg.searchNumber("133,634;135,682", gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1)
+gg.refineNumber("133,634", gg.TYPE_DWORD)
+gg.getResults(50000)
+gg.editAll("84,149,249", gg.TYPE_DWORD)
+gg.clearResults()
+gg.setRanges(gg.REGION_C_ALLOC)
+gg.setVisible(false)--Dec By MMP
+gg.searchNumber("133,378;144,387", gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1)
+gg.refineNumber("133,378", gg.TYPE_DWORD)
+gg.getResults(50000)
+gg.editAll("84,149,249", gg.TYPE_DWORD)
+gg.clearResults()
+gg.setRanges(gg.REGION_C_ALLOC)
+gg.setVisible(false)--Dec By MMP
+gg.searchNumber("620137442967552")
+gg.refineNumber("620137442967552")
+gg.getResults(510)
+gg.editAll("288233678981562368", gg.TYPE_QWORD)
+gg.clearResults()
+gg.setRanges(gg.REGION_C_ALLOC)
+gg.setVisible(false)--Dec By MMP
+gg.searchNumber("620137442967552")
+gg.refineNumber("620137442967552")
+gg.getResults(5010)
+gg.editAll("288233678981562368", gg.TYPE_QWORD)
+gg.clearResults()
+gg.setRanges(gg.REGION_C_ALLOC)
+gg.setVisible(false)--Dec By MMP
+gg.searchNumber("578351706144768;564058054983680")
+gg.refineNumber("578351706144768")
+gg.getResults(50010)
+gg.editAll("288233678981562368", gg.TYPE_QWORD)
+gg.clearResults()
+gg.setVisible(false)--Dec By MMP
+gg.searchNumber("577252194516992;288233678981562368")
+gg.refineNumber("577252194516992")
+gg.getResults(50010)
+gg.editAll("288233678981562368", gg.TYPE_QWORD)
+gg.clearResults()
+gg.setRanges(gg.REGION_C_ALLOC)
+gg.setVisible(false)--Dec By MMP
+gg.searchNumber("3298534883328~288233678981562368;288233678981562368")
+gg.refineNumber("3298534883328~288233678981562368")
+gg.getResults(5678)
+gg.editAll("0", gg.TYPE_DWORD)
+gg.clearResults()
+gg.setRanges(gg.REGION_C_ALLOC)
+gg.setVisible(false)--Dec By MMP
+gg.searchNumber("280~590336;67109633")
+gg.refineNumber("280~590336")
+gg.getResultsCount()
+gg.clearResults()
+gg.setRanges(gg.REGION_C_ALLOC)
+gg.setVisible(false)--Dec By MMP
+gg.searchNumber("134914;144387", gg.TYPE_DWORD)
+gg.refineNumber("134914", gg.TYPE_DWORD)
+gg.getResults(62877)
+gg.editAll("133890", gg.TYPE_DWORD)
+gg.clearResults()
+gg.setRanges(gg.REGION_C_ALLOC)
+gg.setVisible(false)--Dec By MMP
+gg.searchNumber("133634;133890", gg.TYPE_DWORD)
+gg.refineNumber("133634", gg.TYPE_DWORD)
+gg.getResults(62877)
+gg.editAll("133890", gg.TYPE_DWORD)
+gg.clearResults()
+gg.setRanges(gg.REGION_C_ALLOC)
+gg.setVisible(false)--Dec By MMP
+gg.searchNumber("133634;134658", gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1)
+gg.refineNumber("133634", gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1, 0)
+gg.getResults(62877)
+gg.editAll("133890", gg.TYPE_DWORD)
+gg.clearResults()
+gg.setRanges(gg.REGION_C_ALLOC)
+gg.setVisible(false)--Dec By MMP
+gg.searchNumber("909391408", gg.TYPE_DWORD)
+gg.getResults(62877)
+gg.editAll("1089886885", gg.TYPE_DWORD)
+gg.clearResults()
+gg.setRanges(gg.REGION_C_ALLOC)
+gg.setVisible(false)--Dec By MMP
+gg.searchNumber("909391408", gg.TYPE_DWORD)
+gg.getResults(999)
+gg.editAll("1089886885", gg.TYPE_DWORD)
 gg.clearResults()
  gg.alert("Bypass Activated Done\nGo & Fuck The Lobby\nLobby Ki Maa Chod Dena")
 gg.toast(" ██████████████ 100%")
