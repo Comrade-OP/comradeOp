@@ -4,14 +4,14 @@
 "Less" : true ,
 "Zero" : false ,
 "Shake" : false ,
-"MB" : true,
+"MB" : falss,
 "Aim" : false,
-"HS" : true,
+"HS" : false,
 "Ipad" : true,
 "InstantHit" : true,
 "Cross" : true,
-"Xhit" : true,
+"Xhit" : false,
 "Knock" : false,
 "SitScope" : false,
-"By" : true
+"By" : false
 }
